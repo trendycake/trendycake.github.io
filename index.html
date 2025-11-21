@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trendy Cakes Shop</title>
+  <meta name="description" content="Trendy Cakes — Handcrafted cakes for every celebration. Order online or visit our shop." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#fff7f0;
+      --pink:#f47c7c;
+      --brown:#6b3f2b;
+      --muted:#666;
+      --max-width:1100px;
+      --radius:14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--cream),#fff);color:var(--brown);}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--pink),#ffd6d6);display:flex;align-items:center;justify-content:center;font-family:'Sacramento',cursive;font-size:26px;color:var(--brown);box-shadow:0 6px 20px rgba(107,63,43,0.08)}
+    nav a{margin-left:18px;text-decoration:none;color:var(--brown);font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero h1{font-size:44px;margin:0 0 12px;line-height:1.03}
+    .lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;background:var(--pink);color:white;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+
+    .card{background:white;border-radius:var(--radius);padding:18px;box-shadow:0 8px 30px rgba(107,63,43,0.06)}
+    .product{display:flex;gap:14px;align-items:center}
+    .product img{width:120px;height:86px;object-fit:cover;border-radius:12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+
+    .section{margin-top:36px}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;cursor:pointer}
+
+    footer{margin-top:44px;padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 320px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:680px){
+      header{flex-direction:column;align-items:flex-start}
+      .hero{grid-template-columns:1fr;gap:18px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+
+    /* modal */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:opacity .18s}
+    .modal.open{opacity:1;pointer-events:auto}
+    .modal .modal-inner{max-width:820px;width:100%;background:white;padding:12px;border-radius:12px}
+    .modal img{width:100%;height:auto;border-radius:8px}
+    .close-btn{background:#eee;border:0;padding:8px 12px;border-radius:8px;margin-left:8px}
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:14px}
+    .flex{display:flex}
+    .gap8{gap:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- <div class="logo">Trendy</div> -->
+         <image class="logo" src="./assets/logo.png" ></image>
+        <div>
+          <div style="font-weight:700;font-size:18px">Trendy Cakes</div>
+          <div class="muted">Handcrafted cakes & bakes</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <!-- <a href="#order">Order</a> -->
+        <a href="#contact">Contact & Order</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Celebrate with a slice of joy 🍰</h1>
+          <p class="lead">Custom cakes, celebration cakes, cupcakes and desserts made with real ingredients — delivered fresh or pick up from our store.</p>
+          <a class="cta" href="#contact">Order Now</a>
+
+          <div class="section">
+            <div class="card">
+              <h3 style="margin:0 0 8px">Popular picks</h3>
+              <div class="grid">
+                <div class="product">
+                  <img src="./assets/chocklate tuffle.jpg" alt="Chocolate Truffle">
+                  <div>
+                    <strong>Chocolate Truffle</strong>
+                    <div class="muted">Rich dark chocolate, layers of ganache</div>
+                  </div>
+                </div>
+                <div class="product">
+                  <img src="./assets/redvelvet.jpg" alt="Red Velvet">
+                  <div>
+                    <strong>Red Velvet</strong>
+                    <div class="muted">Velvety cream cheese frosting</div>
+                  </div>
+                </div>
+                <div class="product">
+                  <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=789" alt="Fruit Cake">
+                  <div>
+                    <strong>Fresh Fruit Cake</strong>
+                    <div class="muted">Seasonal fruits & light sponge</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assets/trendycakes.jpg" alt="Cake" style="width:100%;height:100%;object-fit:cover;border-radius:10px;margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Pickup & Delivery</div>
+              <div class="muted">Open daily 9AM — 9PM</div>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:20px">+91 73874 22282</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="section">
+        <h2>Menu</h2>
+        <p class="muted">A few of our favourite creations — we also do custom designs for birthdays and weddings.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+          <div class="card">
+            <h4 style="margin:0 0 6px">Classic Chocolate — ₹600</h4>
+            <div class="muted">Dark ganache, chocolate sponge (serves 8)</div>
+          </div>
+          <div class="card">
+            <h4 style="margin:0 0 6px">Strawberry Cheesecake — ₹600</h4>
+            <div class="muted">Creamy cheesecake with fresh strawberries</div>
+          </div>
+          <div class="card">
+            <h4 style="margin:0 0 6px">Vanilla Celebration — ₹500</h4>
+            <div class="muted">Buttery vanilla sponge with buttercream</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section">
+        <h2>Gallery</h2>
+        <p class="muted">Tap any image to enlarge</p>
+        <div class="gallery" aria-hidden="false">
+          <img src="./assets/chocklate tuffle.jpg" alt="cake1">
+          <img src="./assets/redvelvet.jpg" alt="cake2">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="cake3">
+          <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="cake4">
+          <img src="./assets/all.jpg" alt="cake5">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=6" alt="cake6">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=7" alt="cake7">
+          <img src="./assets/butterfly.jpg" alt="cake8">
+        </div>
+      </section>
+
+      <section id="order" class="section">
+        <h2>Place an Order</h2>
+        <div class="card" style="display:flex;flex-direction:column;gap:10px">
+          <label><strong>Your name</strong><br><input id="name" placeholder="e.g. Priya" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px"></label>
+          <label><strong>Phone</strong><br><input id="phone" placeholder="+91 9xxxx xxxxx" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px"></label>
+          <label><strong>Order details</strong><br><textarea id="details" placeholder="Size, flavour, date & message" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px"></textarea></label>
+          <div style="display:flex;justify-content:flex-end">
+            <button id="orderBtn" class="cta">Email order</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact & Order</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:240px">
+            <strong>Delivery</strong>
+            <div class="muted">Available in Pune </div>
+            <div style="margin-top:8px"><strong>Phone</strong><div class="muted">+91 73874 22282</div></div>
+          </div>
+          <div class="card" style="flex:1;min-width:240px">
+            <strong>Opening hours</strong>
+            <div class="muted">Mon - Sun: 9:00 — 21:00</div>
+            <div style="margin-top:8px"><strong>Instagram</strong><div class="muted">trendy_cakes</div></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+       © <span id="year"></span> Trendy Cakes • Made with ❤️ — Local pickup & delivery
+    </footer>
+  </div>
+
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-inner card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <strong id="modal-title">Image</strong>
+        <div><button class="close-btn" id="closeModal">Close</button></div>
+      </div>
+      <img id="modal-img" src="" alt="enlarged image">
+    </div>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('order').style.display = 'none'
+
+    // gallery modal
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', ()=>{
+        modalImg.src = img.src.replace('q=80','q=100');
+        modalTitle.textContent = img.alt || 'Cake image';
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+      });
+    });
+    document.getElementById('closeModal').addEventListener('click', ()=>{
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+    });
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); } });
+
+    // order mailto (simple)
+    document.getElementById('orderBtn').addEventListener('click', ()=>{
+      const name = document.getElementById('name').value || '—';
+      const phone = document.getElementById('phone').value || '—';
+      const details = document.getElementById('details').value || '—';
+      const subject = encodeURIComponent('New cake order from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nPhone: ' + phone + '\n\nOrder details:\n' + details + '\n\n(Please call to confirm)');
+      window.location.href = 'mailto:hello@sweetslice.example?subject='+subject+'&body='+body;
+    });
+
+    // smooth scroll for nav
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
